@@ -30,9 +30,11 @@ namespace appBuffetFrancisco.View
 
             if (usuario == "admin" && senha == "123")
             {
-                this.Visible = false;
+                this.Hide();
+
                 MenuTela Menu = new MenuTela();
-                Menu.Show(this);
+                Menu.FormClosed += (s, args) => this.Close();
+                Menu.Show();
             }
             else
             {
